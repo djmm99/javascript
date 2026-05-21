@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(35, 35, 35);
+            color: rgb(255, 246, 232);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:1.4em  ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> e JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+
+
+
+    <script>
+        const corpo = window.document.body
+        const p1 = window.document.querySelector('p')
+        const p2 = (document.querySelectorAll('p'))[1]
+
+
+
+/*      const d = window.document.querySelector('#msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou agrardando' */
+
+/*     window.document.write(`Está escrito assim: ${p1.innerText}`); */
+        
+/*         corpo.style.background = 'black'
+        p1.style.color = 'blue' */
+
+/*         document.write(p2.innerText) //pega soomente o texto
+        document.write(p2.innerHTML) //pega com filhos */
+    </script>
+</body>
+</html>
