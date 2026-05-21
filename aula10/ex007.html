@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.3em;
+        }
+
+        input {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" id="soma">
+
+    <div id="res">Resutado</div>
+
+
+    <script>
+        const soma = window.document.querySelector('#soma')
+        soma.addEventListener('click', clicar)
+        function clicar() {
+            
+            const tn1 = window.document.querySelector('#txtn1')
+            const tn2 = window.document.querySelector('#txtn2')
+            const res = window.document.querySelector('#res')
+
+            const n1 = Number(tn1.value)
+            const n2 = Number(tn2.value)
+            const s = n1 + n2
+            res. innerHTML = `A soma entre ${n1} e ${n2} é igual  a <strong>${s}</strong>`
+        }
+   
+
+    </script>
+</body>
+</html>
