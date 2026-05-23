@@ -38,17 +38,23 @@
         
 
         function calcular() {
-            let txtv = window.document.querySelector('input#txtvel');
+
+            let inputTxtvel = window.document.querySelector('input#txtvel');
+
             let res = window.document.querySelector('div#res');
-            let vel = Number(txtv.value);
-            res.innerHTML = `Sua velocidade atual e de <strong>${vel} Km/h</strong>`
+
+            let vel = Number(inputTxtvel.value);
+
+            res.innerHTML = `Sua velocidade 
+            atual e de <strong>${vel} Km/h</strong>`;
+
             if (vel > 60) {
-                res.innerHTML += `<p>Vocé esta <strong>MULTADO</strong> por excesso de velocidade</p>`
-            }
+                res.innerHTML += `<p>Você esta <strong>MULTADO</strong> por excesso de velocidade</p>`
+            };
 
             // NÃO PODE SER SÓ =(recebe) TEM QUE SER += SE NÃO SOBRESCREVE 
             //            V
-            res.innerHTML += `<p>Dirija sempre com o sinto de segurança!</p>`
+            res.innerHTML += `<p>Dirija sempre com o sinto de segurança!</p>`;
         }
     </script>
 </body>

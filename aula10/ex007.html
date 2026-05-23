@@ -42,6 +42,14 @@
             res. innerHTML = `A soma entre ${n1} e ${n2} é igual  a <strong>${s}</strong>`
         }
    
+         // 1. SELEÇÃO: Guarda o elemento HTML em uma constante protegida
+        let divArea = window.document.querySelector('div#area')
+         // 2. OUVINTE: Ativa o alarme no elemento apontando para a função
+        divArea.addEventListener('click', clicar)
+        // 3. AÇÃO: Cria a função isolada com as ordens do que vai mudar na tela
+        function clicar() {
+            divArea.innerText = 'Clicou!'
+        }
 
     </script>
 </body>

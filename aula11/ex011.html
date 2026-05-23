@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embaixada</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.1em;
+        }
+
+        div#res {
+            margin-top: 10px;
+        }
+
+        input#txtvel {
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Passaporte</h1>
+    <h2>Questionário</h2>
+    <ul>
+        <li>
+            Qual o pais voce nasceu? 
+            <input type="text" name="pais" id="pais">
+            <input type="button" value="Enviar" id="clic">
+        </li>
+        <div id="resp">
+
+        </div>
+    </ul>
+
+
+
+
+
+    <script>
+        let inputClic = window.document.querySelector('input#clic');
+
+        inputClic.addEventListener('click', clicar);
+
+        function clicar() {
+            let inputPais = window.document.querySelector('input#pais');
+
+
+            let divResp = window.document.querySelector('div#resp');
+
+            if (inputPais.value.toLowerCase() != 'brasil') {
+                divResp.innerHTML = `<p>Você e estrangeiro !</p>`
+            } else {
+                divResp.innerHTML = `<p>Você e de terras Tupiniquim !</p>`
+            }
+}
+
+
+    </script>
+</body>
+</html>
