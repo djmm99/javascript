@@ -1,16 +1,11 @@
 {
-    // Use o IntelliSense para saber mais sobre os atributos possíveis.
-    // Focalizar para exibir as descrições dos atributos existentes.
-    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        
+    "version": "0.2.0", // Versão interna do formato de configuração do VS Code
+    "configurations": [ // Lista que guarda todas as opções de inicialização do depurador
         {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Debugar com Live Server",
-            "url": "http://localhost:5500/${relativeFile}",
-            "webRoot": "${workspaceRoot}"
+            "type": "node", // Define o motor de execução: roda direto no Node.js (sem abrir navegador)
+            "request": "launch", // Informa ao editor que ele deve iniciar e rodar um programa do zero
+            "name": "Rodar Arquivo Atual no Node", // Nome escolhido por você que aparece no botão do "Play"
+            "program": "${file}" // Variável nativa que diz: "Execute o arquivo que estiver aberto na tela agora"
         }
     ]
 }
