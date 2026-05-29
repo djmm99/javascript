@@ -40,6 +40,10 @@ form  button {
     
 }
 
+div#res {
+    padding: 10px;
+}
+
 footer {
     color: white;
     text-align: center;
