@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+    background: rgb(154, 124, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+}
+
+header {
+    color: white;
+    text-align: center;
+    text-align: center;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 2px 2px 3px 0px #0000005c;
+}
+
+form > div {
+    padding: 10px;
+}
+
+form input#start {
+    margin-left: 8.5px;
+}
+
+form input#fim {
+    margin-left: 21.1px;
+}
+
+
+form  button {
+    margin: 10px;
+    margin-left: 74px;
+    
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
