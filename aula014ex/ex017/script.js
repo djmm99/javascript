@@ -1,30 +1,27 @@
-let butGerar = document.querySelector('button#gerar')
-butGerar.addEventListener('click', calcular)
+let btnGera = document.querySelector('button#btnGerar')
+btnGera.addEventListener('click', calcular)
 
 function calcular() {
     let inputMdr = document.querySelector('input#mdr')
-    let md = Number(inputMdr.value);
-    let selecRes = document.querySelector('select#res');
+    let selctTabuad = document.querySelector('select#selTabuad');
     
-    selecRes.innerHTML = ''
+    selctTabuad.innerHTML = ''
 
-    console.log(md);
-    
-    if (md == 0) {
-        window.alert('[ERRO] Digite um numero !')
+    if (inputMdr.value.length == 0) {
+        window.alert('[ERRO] Digite um numero !');
+        selctTabuad.innerHTML = '<option value="dig">Digite um numero acima</option>'
     } else {
+        let inputMltcando = Number(inputMdr.value);
+
         for (let mr = 1; mr <= 10 ; mr++) {
-            res = md * mr
+            let res = inputMltcando * mr;
 
             let opc = document.createElement('option');
-            opc.value = `oper-${mr}`;
-            opc.text = `${md} x ${mr} = ${res}`;
-            selecRes.appendChild(opc);
+            opc.value = `tab-${mr}`;
+            opc.text = `${inputMltcando} x ${mr} = ${res}`;
+            selctTabuad.appendChild(opc);
     }
     }
-
-
-
 }        
 
 /*         let opc = document.createElement('option')
