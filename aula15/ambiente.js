@@ -7,7 +7,7 @@ let num = [5, 8, 4, 7, 6]
 
 num.sort()
 console.log(num);
-num.push(1)
+num.push(2)
 
 console.log(num);
 console.log(`O vetor tem ${num.length} posições.`);
