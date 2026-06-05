@@ -39,6 +39,10 @@ function adicionar() {
 }
 
 function finalizar() {
+    if (lista.length == 0) {
+        window.alert('Adicione números antes de finalizar!');
+        return;
+    }
     let quantidade = lista.length
     let maior = lista[0];
     let menor = lista[0];
@@ -48,21 +52,17 @@ function finalizar() {
         if (lista[i] > maior) {
             maior = lista[i]
         }
-    }
-    
-    for (let i = 0; i < lista.length; i++) {
         if (lista[i] < menor) {
             menor = lista[i];
         }
-    }
-    
-    for (let i = 0; i < lista.length; i++) {
         soma += lista[i];
-    }
+
+        
     
+    }
     let media = soma / quantidade;
     
-    divRes.innerHTML += `<p>Ao todo, temos ${lista.length} números cadastrados.</p>`;
+    divRes.innerHTML = `<p>Ao todo, temos ${lista.length} números cadastrados.</p>`;
     divRes.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`;
     divRes.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`;
     divRes.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`;
