@@ -1,70 +1,69 @@
-let btnAdd = document.querySelector('button#add');
-btnAdd.addEventListener('click', adicionar);
+let num = document.querySelector('input#fnum');
+let lista = document.querySelector('select#flista');
+let res = document.querySelector('div#res');
+let valores = [];
 
-let buttonEnviar = document.querySelector('button#enviar');
-buttonEnviar.addEventListener('click', finalizar);
+//Testa se e um numero
+function isNumero(n) { 
+    if (Number(n) >= 1 && Number(n) <= 100) { //Number(n) e por segurança isNumero(n) == isNumero(num.value) => n == num
+        return true;  
+    } else {
+        return false;
+    }
+}
 
-let divRes = document.querySelector('div#res')
-
-let lista = []
-
-
+//Testa se esta na lista
+function inLista(n, l) { //nao lembro de ver dois parameters
+    if (l.indexOf(Number(n)) != -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function adicionar() {
-    let inputNum = document.querySelector('input#num');
-    let num = Number(inputNum.value);
-    let selectLista = document.querySelector('select#lista') 
-    let divRes = document.querySelector('div#res')
-    
-    if (lista.indexOf(num) >= 0) {
-        console.log(`esse e o index ${lista.indexOf(num)}`);
-        window.alert('Esse numero ja foi adicionado')
+    // Se e um numero      and Se NÃO esta na lista
+    if(isNumero(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value));
+        let item = document.createElement('option');
+        item.text = `Valor ${num.value} adicionado.`;
+        lista.appendChild(item)
+        res.innerHTML = ''
+
+        console.log('Conteúdo da lista:', valores);
     } else {
-        if (num > 100) {
-            window.alert('Esse numero e grande')
-        } else {
-            if (num < 1) {
-                window.alert('Esse numero e pequeno')
-            } else {
-                lista.push(num);
-                selectLista.innerHTML += `<option value="nun0${lista.indexOf(num)}">Valor ${num} adicionado.</option>`;
-                inputNum.value = '';
-                inputNum.focus();
-            }
-        }
+        window.alert('Valor invalido ou ja encontrado na lista');
     }
-    console.log(`adicionado ${Number(inputNum.value)}`);
-    console.log(lista);
-    console.log(num);
-}
+    num.value = ''; //Apaga a caixa digitação depois de adicionar
+    num.focus(); //Coloque o cursor de digitação dentro desta caixa
+} 
 
 function finalizar() {
-    if (lista.length == 0) {
-        window.alert('Adicione números antes de finalizar!');
-        return;
+    if (valores.length == 0) {
+        window.alert('Adicione valores antes de finalizar!');
+    } else {
+        let total = valores.length;
+        let maior = valores[0];
+        let menor = valores[0];
+        let soma = 0;
+        let media = 0;
+    for(let pos in valores) {
+        if (valores[pos] > maior)
+            maior = valores[pos];
+        if (valores[pos] < menor) 
+            menor = valores[pos];
+        soma += valores[pos];
     }
-    let quantidade = lista.length
-    let maior = lista[0];
-    let menor = lista[0];
-    let soma = 0;
-    
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i] > maior) {
-            maior = lista[i]
-        }
-        if (lista[i] < menor) {
-            menor = lista[i];
-        }
-        soma += lista[i];
+    media = soma / total
 
-        
-    
+    res.innerHTML = '';
+    res.innerHTML += `<p>Ao todo, temos ${total} números cadastrados.</p>`;
+    res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`;
+    res.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`;
+    res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`;
+    res.innerHTML += `<p>A media dos valores digitados é ${media}.</p>`;
     }
-    let media = soma / quantidade;
-    
-    divRes.innerHTML = `<p>Ao todo, temos ${lista.length} números cadastrados.</p>`;
-    divRes.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`;
-    divRes.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`;
-    divRes.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`;
-    divRes.innerHTML += `<p>A média dos valores digitados é ${media}.</p>`;
 }
+
+
+
