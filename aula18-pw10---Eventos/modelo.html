@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <header>
+        <h1>Aprendendo JavaScript</h1>
+        
+    </header>
+    <section>
+        <h2>Eventos JavaScript</h2>
+        <p id="texto"></p>
+
+        <button 
+        ondblclick="eventoDblClick()" 
+        style="margin-left: 150px;font-size:1.1em;">Clique Aqui</button><br><br>
+
+        <div id="teste"  
+        onmouseout="viraAzul()" 
+        onmouseover="viraVermelho()" 
+        style=" margin: auto auto; width:80%; height: 200px; background:blue; margin-bottom: 20px;">
+        </div>
+
+        <input 
+        id="campoTexto" 
+        onkeypress="teclaPressionada()"
+        onchange="mudou()"
+        onfocus="limpaTexto()" 
+        type="text" 
+        style="font-size: 1.1em; margin-left: 70px;" placeholder="Digite alguma coisa"
+        >
+
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -6,5 +6,6 @@
         "parimpar",
         "radsex",
         "txtano"
-    ]
+    ],
+    "commentTranslate.hover.enabled": false
 }
