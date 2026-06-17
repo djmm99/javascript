@@ -31,6 +31,10 @@ section > h1, h2 {
     margin-top: 0;
 }
 
+section > div {
+    margin: 0px 108px;
+}
+
 footer {
     color: white;
     text-align: center;
