@@ -1,3 +1,5 @@
+
+
 @charset "UTF-8";
 
 *{
@@ -5,10 +7,14 @@
 }
 
 .material-symbols-outlined {
-    font-size: 48px;     /* Tamanho padrão para todos */
-    color: rgb(0, 0, 0);    /* Cor padrão para todos */
-    vertical-align: middle;
-} 
+    font-size: 1em; /* O ícone terá o mesmo tamanho que o texto do botão */
+    vertical-align: middle; /* Alinha o ícone centralizado verticalmente com o texto */
+}
+
+.clicado {
+    color: green;
+    font-variation-settings:'FILL' 1;
+}
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -57,7 +63,7 @@ main {
 
 }
 
-div.item {
+.item {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -68,28 +74,38 @@ div.item {
     box-shadow: 0 0 20px #ccc;
     border-radius: 5px;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 
-.item-icone {
+.item.clicado {
+    background-color: #d4f6d9;
+}
+
+.item.clicado .item-nome{
+    text-decoration: line-through ;
+    color: gray;
+}
+
+div.item-icone {
     /* border: 1px solid orangered; */
     flex: 20%;
     text-align: center;
     font-size: 2rem;
 }
 
-.item-nome {
+div.item-nome {
     /* border: 1px solid deeppink; */
     flex: 55%;
     font-size: 1.3em;
     font-weight: bold;
 }
 
-.item-botao {
+div.item-botao {
     /* border: 1px solid darkgreen; */
     flex: 25%;
 }
 
-.delete {
+button.delete {
     background: red;
     color: white;
     border: none;
@@ -97,4 +113,9 @@ div.item {
     height: 80px;
     width: 100%;
     border-radius: 0px 5px 5px 0px;
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    gap: 8px; /* Cria um espaço entre o ícone e o texto */
+    font-size: 16px; /* Defina o tamanho do texto aqui */
 }
+
