@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    --cor-secundaria: #008000;
+    --cor-primaria: #ffffff;
+    --sombra-padrao: 3px 3px 3px 0px #11111157;
+}
+
+/* --- Variáveis Globais --- */
+.item-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body {
+    background-color: #00000019;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+/* --- Cabeçalho --- */
+header > h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- Navegação (Input + Botão) --- */
+nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: 50px;
+    margin: 0px 20px 30px 20px;
+}
+
+nav > input#inputTarefa {
+    flex-grow: 1;
+    min-width: 50px;
+    padding: 20px;
+    border: 2px solid var(--cor-secundaria);
+    border-right: 0;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: var(--sombra-padrao);
+    font-size: .9em;
+}
+
+nav > input#inputTarefa:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+nav > button#buttonAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 4px;
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    box-shadow: var(--sombra-padrao);
+}
+
+nav > button#buttonAdd:hover {
+    background-color: #008000cc;
+}
+
+nav > button span.icone-send {
+    color: var(--cor-primaria);
+    font-size: 3em;
+}
+
+/* --- Itens da Lista --- */
+main {
+    flex-grow: 1;
+}
+main > div.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: 55px;
+    margin: 0px 20px;
+    background-color: var(--cor-primaria);
+    border-radius: 10px;
+    box-shadow: var(--sombra-padrao);
+    overflow: hidden;
+    margin-bottom: 12px;
+    /* height: 555px; */
+}
+
+div.item > div.item-icone {
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+}
+
+div.item > div.item-tarefa p {
+    user-select: text;
+}
+
+div.item > div.item-apagar {
+    display: flex;
+    align-self: stretch;
+    gap: 10px;
+}
+
+div.item-apagar > button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    background: #ff0000;
+    border: none;
+    color: var(--cor-primaria);
+    font-size: .8em;
+    cursor: pointer;
+}
+
+div.item-apagar > button:hover {
+    background: #ff0000d1;
+}
+
+/* --- Itens Conclidos da Lista --- */
+
+main > div.concluido {
+    background: #d7ffd7;
+}
+
+div.concluido > div > p {
+    text-decoration: line-through;
+    color: #7d7d7d;
+}
+
+div.concluido > div > span {
+    color: var(--cor-secundaria);
+}
+
+footer {
+    /* border: 1px dotted red; */
+    text-align: center;
+    background-color: var(--cor-primaria);
+    padding: 10px;
+}
+
+footer  a {
+    text-decoration: none;
+    color: #7d7d7d;
+}
+
+footer  a:hover {
+    text-decoration: underline;
+    color: #2d2d2d;
+}
