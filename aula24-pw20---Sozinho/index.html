@@ -12,23 +12,23 @@
     <header>
         <h1>Lista de Tarefa</h1>
         <nav>
-            <input type="text" name="nomeTarefa" id="inputTarefa" placeholder="Digite sua Tarefa">
-            <button id="buttonAdd">
+            <input id="inputTask" type="text" name="nomeTarefa" placeholder="Digite sua Tarefa">
+            <button id="buttonAdd" onclick="addTask()">
                 <span class="material-symbols-outlined icone-send">add</span>
             </button>
         </nav>
     </header> 
 
-    <main>
- <!--        
+    <main id="areaList">
+      
         <div class="item">
-            <div class="item-icone">
+            <div class="item-icon">
                 <span class="material-symbols-outlined icone">circle</span>
             </div>
-            <div class="item-tarefa">
+            <div class="item-task">
                 <p>Tarefa para fazer</p>
             </div>
-            <div class="item-apagar">
+            <div class="item-delete">
                 <button>
                     <span class="material-symbols-outlined item-fill">delete</span>
                     Deletar
@@ -36,33 +36,33 @@
             </div>
         </div>
 
-        <div class="item concluido"> 
-        <!== MUDAR concluido PELO JS ==>
+        <div id="check" class="item"> 
+        <!-- MUDAR concluido PELO JS -->
 
-            <div class="item-icone">
+            <div class="item-icon">
                 <span class="material-symbols-outlined
                 item-fill">
-        <!== MUDAR item-fill PELO JS ==>
+        <!-- MUDAR item-fill PELO JS -->
 
                     check_circle 
-        <!== Mudar check_circle POR circle PELO JS ==>
+        <!-- Mudar check_circle POR circle PELO JS -->
         
                 </span>
             </div>
-            <div class="item-tarefa">
+            <div class="item-task">
                 <p>Tarefa para feita</p>
             </div>
-            <div class="item-apagar">
+            <div class="item-delete">
                 <button>
                     <span class="material-symbols-outlined item-fill">delete</span>
                     Deletar
                 </button>
             </div>
-        </div> -->
+        </div>
     </main>
 
     <footer>
-        <p>Desenvolvido por <a href="https://djmm99.github.io/projeto-portifolio_v2/">djmm</a> </p>
+        <p>Desenvolvido por <a target="_blank" href="https://djmm99.github.io/projeto-portifolio_v2/">djmm</a> </p>
     </footer>
     <script src="js/script.js"></script>
 </body>

@@ -45,7 +45,7 @@ nav {
     margin: 0px 20px 30px 20px;
 }
 
-nav > input#inputTarefa {
+nav > input#inputTask {
     flex-grow: 1;
     min-width: 50px;
     padding: 20px;
@@ -56,7 +56,7 @@ nav > input#inputTarefa {
     font-size: .9em;
 }
 
-nav > input#inputTarefa:focus {
+nav > input#inputTask:focus {
     border-color: #000000;
     outline: none;
 }
@@ -102,23 +102,27 @@ main > div.item {
     /* height: 555px; */
 }
 
-div.item > div.item-icone {
+div.item > div.item-icon {
     display: flex;
     padding: 15px;
     cursor: pointer;
 }
 
-div.item > div.item-tarefa p {
+div.item > div.item-icon:hover {
+    color: #4e4e4e;
+}
+
+div.item > div.item-task p {
     user-select: text;
 }
 
-div.item > div.item-apagar {
+div.item > div.item-delete {
     display: flex;
     align-self: stretch;
     gap: 10px;
 }
 
-div.item-apagar > button {
+div.item-delete > button {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -130,22 +134,20 @@ div.item-apagar > button {
     cursor: pointer;
 }
 
-div.item-apagar > button:hover {
+div.item-delete > button:hover {
     background: #ff0000d1;
 }
 
 /* --- Itens Conclidos da Lista --- */
 
-main > div.concluido {
+main > div.check {
     background: #d7ffd7;
 }
-
-div.concluido > div > p {
+div.check > div > p {
     text-decoration: line-through;
     color: #7d7d7d;
 }
-
-div.concluido > div > span {
+div.check span {
     color: var(--cor-secundaria);
 }
 
