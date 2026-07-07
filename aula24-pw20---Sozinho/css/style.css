@@ -22,7 +22,7 @@
 body {
     background-color: #00000019;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -140,14 +140,14 @@ div.item-delete > button:hover {
 
 /* --- Itens Conclidos da Lista --- */
 
-main > div.check {
-    background: #d7ffd7;
+main > div.checked {
+    background: #e3ffe3;
 }
-div.check > div > p {
+div.checked > div > p {
     text-decoration: line-through;
     color: #7d7d7d;
 }
-div.check span {
+div.checked > div > span {
     color: var(--cor-secundaria);
 }
 
