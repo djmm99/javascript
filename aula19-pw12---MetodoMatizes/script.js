@@ -78,14 +78,7 @@ function filtragem(value, index, array) {
     return value > 20;
 }
  */
-
-
-
-
-
-
-
-
+                                 
 
 
 
