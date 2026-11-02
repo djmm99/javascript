@@ -36,11 +36,11 @@ somar(5, 3, exibir); // Saída: O resultado é: 8
 
 ----------------------------------------------------------------*/
 
-
 // ======================================================================
 // EXERCÍCIO 1: Verificador de Par ou Ímpar
 // ======================================================================
 
+/*---------------------------------------------------------------- 
 
 // 1. Função de Callback (responsável apenas por mostrar o resultado no console)
 function exibir(mensagem) {
@@ -57,12 +57,20 @@ function verificarNumero(num, callback) {
 }
 
 // 3. A Chamada (Execução)
-verificarNumero(45, exibir); 
+verificarNumero(4, exibir); 
 // Saída no console: O numero 4 e impar
 
-
+----------------------------------------------------------------*/
 
 // ======================================================================
 // EXERCÍCIO 2:Calculadora de Desconto
 // ======================================================================
 
+function exibir(precoOriginal, porcentDesconto, callback) {
+    console.log(`Para o valor de : R$${precoOriginal} com o desconto de : ${porcentDesconto}%, o valor fica R$${callback}.`);
+    
+}
+
+function calcPrecoFinal(precoOriginal, porcentDesconto, callback) {
+    
+}
