@@ -1,3 +1,4 @@
+/*----------------------------------------------------------------
 function exibir(num) {
     console.log(`A operação resultou em: ${num}`);
     
@@ -33,15 +34,35 @@ function somar(a, b, callback) {
 // 3. Execução (Passa a função 'exibir' como argumento)
 somar(5, 3, exibir); // Saída: O resultado é: 8
 
+----------------------------------------------------------------*/
+
+
+// ======================================================================
+// EXERCÍCIO 1: Verificador de Par ou Ímpar
+// ======================================================================
+
+
+// 1. Função de Callback (responsável apenas por mostrar o resultado no console)
+function exibir(mensagem) {
+    console.log(mensagem);
+}
+
+// 2. Função Principal (recebe o número e a função de callback)
 function verificarNumero(num, callback) {
     if (num % 2 === 0) {
-        callback (`O numero ${num} e par`);
+        callback(`O numero ${num} e par`); // Executa o callback passando a frase de par
     } else {
-        callback (`O numero ${num} e impar`)
+        callback(`O numero ${num} e impar`); // Executa o callback passando a frase de ímpar
     }
 }
 
-function exibir(callback,num) {
-    console.log(callback);
-    let num = 45;
-}
+// 3. A Chamada (Execução)
+verificarNumero(45, exibir); 
+// Saída no console: O numero 4 e impar
+
+
+
+// ======================================================================
+// EXERCÍCIO 2:Calculadora de Desconto
+// ======================================================================
+
