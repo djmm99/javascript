@@ -1,4 +1,8 @@
-/*----------------------------------------------------------------
+// ======================================================================
+// EXERCÍCIO DA AULA
+// ======================================================================
+
+/*---------------------------------------------------------------------
 function exibir(num) {
     console.log(`A operação resultou em: ${num}`);
     
@@ -37,10 +41,10 @@ somar(5, 3, exibir); // Saída: O resultado é: 8
 ----------------------------------------------------------------*/
 
 // ======================================================================
-// EXERCÍCIO 1: Verificador de Par ou Ímpar
+// EXERCÍCIO 1: Verificador de Par ou Ímpdar (Nível: Fácil)
 // ======================================================================
 
-/*---------------------------------------------------------------- 
+/* //---------------------------------------------------------------- 
 
 // 1. Função de Callback (responsável apenas por mostrar o resultado no console)
 function exibir(mensagem) {
@@ -60,17 +64,43 @@ function verificarNumero(num, callback) {
 verificarNumero(4, exibir); 
 // Saída no console: O numero 4 e impar
 
-----------------------------------------------------------------*/
+*/
 
 // ======================================================================
-// EXERCÍCIO 2:Calculadora de Desconto
+// EXERCÍCIO 2: Calculadora de Desconto (Nível: Intermediário)
 // ======================================================================
 
-function exibir(precoOriginal, porcentDesconto, callback) {
-    console.log(`Para o valor de : R$${precoOriginal} com o desconto de : ${porcentDesconto}%, o valor fica R$${callback}.`);
-    
+
+/* //---------------------------------------------------------------- 
+
+
+// 1. Função de callback (exibir): Responsável por receber os dados processados 
+// e montar a string formatada que será mostrada no console.
+function exibir(precoFinal, precoOriginal, porcentDesconto) {
+    console.log(`Para o valor de R$${precoOriginal} com o desconto de ${porcentDesconto}%, o valor fica em R$${precoFinal}.`);
 }
 
+// 2. Função principal (calcPrecoFinal): É a primeira a ser acionada na execução prática.
+// Ela recebe os parâmetros iniciais e a função de callback.
 function calcPrecoFinal(precoOriginal, porcentDesconto, callback) {
     
+    // Aqui é feito todo o cálculo matemático com base nos valores adicionados nos parâmetros.
+    let desconto = precoOriginal * (porcentDesconto / 100);
+    let precoFinal = precoOriginal - desconto;
+
+    // Ao final dos cálculos, a função principal dispara (chama) a função de callback ('exibir'),
+    // injetando os valores necessários para que a string seja exibida no console.
+    callback(precoFinal, precoOriginal, porcentDesconto);
 }
+
+// 3. A Chamada principal: É o gatilho que inicia todo o processo, passando os argumentos 
+// (preço, porcentagem e a função 'exibir' como callback).
+calcPrecoFinal(100, 10, exibir);
+
+ */
+
+
+// ======================================================================
+// EXERCÍCIO 3: Simulação de Carregamento Assíncrono (Nível: Desafio)
+// ======================================================================
+
