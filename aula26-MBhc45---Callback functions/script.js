@@ -104,3 +104,15 @@ calcPrecoFinal(100, 10, exibir);
 // EXERCÍCIO 3: Simulação de Carregamento Assíncrono (Nível: Desafio)
 // ======================================================================
 
+function exibir(mensagem) {
+    console.log(mensagem);
+    
+}
+
+function caregarDados(usuario, callback) {
+    setTimeout(() => {
+        callback(`Dados do usuário ${usuario} carregados com sucesso!`);
+    }, 5000);
+}
+
+caregarDados(`Tião`, exibir)
