@@ -112,6 +112,7 @@ const p3 = new Promise((resolve, reject) => {
 
 
 const resolveAll = Promise.all([p1, p2, p3]).then( //VAI ESPERRAR RESOLVER "TODOS" p PARA ENTA CONTINUAR
+
     (data) => {
         console.log(data);
     }
@@ -187,7 +188,7 @@ fetch(`https://api.github.com/users/${userName}`, {          // 2. A função 'f
 // ======================================================================
 // Exercício 1: Criando uma Promise Básica (Sucesso e Rejeição)
 // ======================================================================
-//---------------------------------------------------------------------/
+/*/---------------------------------------------------------------------/
 
 const verificarIdade = new Promise((resolve, reject) => {
     const idade = '19';
@@ -211,7 +212,7 @@ const verificarIdade = new Promise((resolve, reject) => {
 // ======================================================================
 // Exercício 2: Encadeamento de .then() (Transformação de Dados)
 // ======================================================================
-//---------------------------------------------------------------------/
+/*/---------------------------------------------------------------------/
 
 
 const formatarNome = new Promise((resolve, reject) => {
@@ -230,3 +231,106 @@ const formatarNome = new Promise((resolve, reject) => {
     console.log(`Nome formatado: ${stringMaiuscula}`);
     
 })
+
+//---------------------------------------------------------------------*/
+// ======================================================================
+// Exercício 3: Praticando Promise.all
+// ======================================================================
+//---------------------------------------------------------------------/
+
+//O objetivo: Entender como lidar com um array de várias promessas simultâneas que rodam em paralelo.
+
+//O que fazer:
+
+    //Crie três variáveis (promessa1, promessa2, promessa3), onde cada uma armazena uma nova Promise que resolve uma string após alguns segundos usando setTimeout (cada uma com um tempo diferente, por exemplo: 1 segundo, 2 segundos e 3 segundos).
+
+    //Utilize o Promise.all() passando um array com essas três promessas para aguardar todas elas terminarem.
+
+    //Capture o resultado com o .then() para exibir o array completo de respostas no console assim que a última promessa for resolvida.
+
+//Lembrando que no seu código de estudo você já chegou a treinar exatamente essa estrutura com o Promise.all([p1, p2, p3]) e também com o Promise.race([p4, p5, p6])!    
+
+const p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(`p1 ok!`);
+    }, 1000);
+});
+
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(`p2 ok!`);
+    }, 2000);
+});
+
+const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(`p2 ok!`);
+    }, 3000);
+});
+
+const todosPromessas = Promise.all([p1, p2, p3]).then(data => {
+    console.log(data);
+});
+
+
+
+
+
+
+
+
+
+//1°   minhaPromise     6 linhas
+
+const minhaPromise = new Promise((resolve, reject) => {                  
+  const sucesso = true;
+  if (sucesso) {
+    resolve('Operação concluída!');
+  } else {
+    reject('Erro na operação.');
+  }
+});
+
+//2° 2 linhas .then()
+
+minhaPromise
+  .then((dados) => dados.toUpperCase())
+  .then((dadosFormatados) => console.log(dadosFormatados));
+
+
+//3° 2 linhas .catch()
+
+minhaPromise
+    .then((dados) => console.log(dados))
+    .catch((erro) => console.error(`Falha: ${erro}`));
+
+
+//4° 2 linhas .all()
+
+Promise.all([promessa1, promessa2, promessa3])
+  .then((resultados) => console.log(resultados)) // ['ok 1', 'ok 2', 'ok 3']
+  .catch((erro) => console.error(erro));
+    
+
+//5° 7 linhas .race()
+
+const pLenta = new Promise((resolve) => {
+    setTimeout(() => resolve("Servidor Principal respondeu!"), 3000);});
+
+const pRapida = new Promise((resolve) => {
+    setTimeout(() => resolve("Servidor de Backup respondeu!"), 1000)});
+
+Promise.race([pLenta, pRapida])
+    .then((vencedor) => {
+        
+        console.log("Resposta mais rápida obtida:");
+        console.log(vencedor)});
+
+
+
+
+
+
+
+
+        
