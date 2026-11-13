@@ -44,21 +44,46 @@ function pararContagem() {
 
 
 
-/*         SET TIME OUT     */                                    
-// Exemplo: Roda uma vez após 2 segundos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*         SET TIME OUT   4 linhas caderno */                                    
+
+// Exemplo: Roda uma vez após 2 segundos 
 const alarme = setTimeout(() => {
     alert("O tempo acabou!");
 }, 2000);
 
 clearTimeout(alarme); // Cancela o alarme
 
-/*    SET INTERVAL  */
+/*    SET INTERVAL 3 linhas caderno */
+
 // Exemplo: Fica rodando a cada 1 segundo
 const cronometro = setInterval(() => {
     console.log("Mais 1 segundo se passou...");
 }, 1000);
 
 clearInterval(cronometro); // Para o loop
+
+
+
 
 
 

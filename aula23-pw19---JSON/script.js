@@ -1,21 +1,4 @@
 
-// 13linhas código 7 caderno
-
-const ajax = new XMLHttpRequest();                  
-
-// Usar crase permite injetar a variável ${input} de forma limpa
-ajax.open('GET', `https://viacep.com.br/ws/${input}/json/`);
-ajax.send();
-
-ajax.onload = function () {
-    // 1. Recebe o texto puro do servidor e transforma em objeto JS
-    let obj = JSON.parse(this.responseText);
-    
-    // 2. Agora o JS consegue ler a propriedade e disparar na tela
-    alert(obj.uf); 
-}
-
-
 
 
 /** JSON **
@@ -104,6 +87,35 @@ function buscarCEP() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Exemplo ajax 8 linhas caderno
+
+const ajax = new XMLHttpRequest();                  
+
+// Usar crase permite injetar a variável ${input} de forma limpa
+ajax.open('GET', `https://viacep.com.br/ws/${input}/json/`);
+ajax.send();
+
+ajax.onload = function () {
+    // 1. Recebe o texto puro do servidor e transforma em objeto JS
+    let obj = JSON.parse(this.responseText);
+    
+    // 2. Agora o JS consegue ler a propriedade e disparar na tela
+    alert(obj.uf); 
+}
 
 
 

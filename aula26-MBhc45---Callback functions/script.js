@@ -116,3 +116,39 @@ function caregarDados(usuario, callback) {
 }
 
 caregarDados(`Tião`, exibir)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//exemplo callback function 7 linha caderno
+
+// 1. Função que será a "Callback"
+function exibir(resultado) {
+    console.log("O resultado é: " + resultado);
+}
+
+// 2. Função principal que recebe a callback por parâmetro
+function somar(a, b, callback) {
+    let op = a + b;
+    callback(op); // Executa a callback passando o resultado
+}
+
+// 3. Execução (Passa a função 'exibir' como argumento)
+somar(5, 3, exibir); // Saída: O resultado é: 8
+
+
+
+

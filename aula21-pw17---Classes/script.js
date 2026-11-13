@@ -1,25 +1,5 @@
 
 
-// 15 linhas 7,5cm
-
-
-class Carro {                      // Criando a fábrica (Molde)
-    constructor(marca, modelo) {
-        this.marca = marca;   
-        this.modelo = modelo; 
-    }
-    buzinar() {
-        console.log("Bip bip!");
-    }
-}
-// Fabricando os objetos (Instanciação)
-const carro1 = new Carro("Fiat", "Uno");
-const carro2 = new Carro("Ford", "Ka");
-
-// 📌 TROCANDO O VALOR DE UMA PROPRIEDADE
-carro1.modelo = "Palio"; // Altera o modelo de "Uno" para "Palio"
-
-
 
 /* CLASSES EM JAVASCRIPT
  
@@ -69,6 +49,42 @@ const carro = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// exemplo de usdo de class 7 linhas caderno
+
+
+class Carro {           // Criando a fábrica (Molde)
+    constructor(marca, modelo) {
+        this.marca = marca;   
+        this.modelo = modelo; 
+    }
+    buzinar() {
+        console.log("Bip bip!");
+    }
+}
+// Fabricando os objetos (Instanciação)
+const carro1 = new Carro("Fiat", "Uno");
+const carro2 = new Carro("Ford", "Ka");
+
+carro1.modelo = "Palio"; // 📌 TROCANDO O VALOR DE UMA PROPRIEDADE
 
 
 
