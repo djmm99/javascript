@@ -2,7 +2,7 @@
 // =============================================================
 // Sintaxe do Async Await
 // =============================================================
-/*/-------------------------------------------------------------/
+//-------------------------------------------------------------/
 
 function primeiraFuncao() {
     return new Promise((resolve) => {
@@ -38,12 +38,20 @@ function getUser(id) {
 
 }
 
-async function showUserName(id) {
-    
-    const user = await getUser(id);
+async function showUserName(id) {//Não esqueçer de usar async antes de usar await (e um erro comum de esqueçer)
 
-    console.log(`O nome do usúario é: ${user.data.first_name}`);
+    try {
     
+        const user = await getUser(id);
+
+        console.log(`O nome do usúario é: ${user.data.first_name}`);
+        
+    } catch (err) {
+
+        console.log(`Erro: ${err}`);
+        
+    }
+     
 }
 
 showUserName(3)
