@@ -1,8 +1,6 @@
-//------------------------------------------------------------*/
-// =============================================================
+//=============================================================*/
 // Sintaxe do Async Await
-// =============================================================
-/*/-------------------------------------------------------------/
+//=============================================================/
 
 function primeiraFuncao() {
     return new Promise((resolve) => {
@@ -23,12 +21,11 @@ async function segundaFuncao() { // async define que afunçao vai ser assincruna
 }
 
 segundaFuncao()
+//============================================================*/
+//Exemplo pratico do Async Await
+//=============================================================/
 
-//------------------------------------------------------------*/
-// =============================================================
-// Exemplo pratico do Async Await
-// =============================================================
-/*/-------------------------------------------------------------/
+
 
 function getUser(id) {
 
@@ -53,13 +50,12 @@ async function showUserName(id) {//Não esqueçer de usar async antes de usar aw
 
 showUserName(3)
 
-
-//------------------------------------------------------------*/
-// =============================================================
+//============================================================*/
 // Exercício 1: Temporizador com async/await (Nível: Básico)
-// =============================================================
+//=============================================================/
+
 //Objetivo: Praticar a criação de uma função que retorna uma Promise com setTimeout e aguardar a resolução dela com await dentro de uma função async.
-/*/-------------------------------------------------------------/
+
 
 
 function esperarSegundos(ms) {
@@ -82,12 +78,12 @@ async function executarFluxo(params) {
 
 executarFluxo();
 
-//------------------------------------------------------------*/
-// =============================================================
+//============================================================*/
 // Exercício 2: Tratamento de Erro com try / catch (Nível: Intermediário)
-// =============================================================
+//=============================================================/
+
 //Objetivo: Treinar o uso de try / catch junto com async/await para lidar com falhas (reject / erro).
-//-------------------------------------------------------------/
+
 
 function buscarUsuarioSimulado(id) {
     
@@ -115,10 +111,24 @@ async function mostrarUsuario(id) {
 
 mostrarUsuario(1);
 
-
-//------------------------------------------------------------*/
-// =============================================================
+//============================================================*/
 // Exercício 3: Buscando Dados de uma API Pública com fetch e async/await (Nível: Prático)
-// =============================================================
+//=============================================================/
+
 //Objetivo: Aplicar async/await e try / catch em uma requisição HTTP real usando fetch e .json().
-//-------------------------------------------------------------/
+
+async function buscarCep(cep) {
+    
+    try {
+
+        const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`);
+        const dados = await resposta.json();
+
+        console.log(`Cidade: ${dados.localidade}, Estado: ${dados.uf}.`);
+    } catch (err) {
+
+        console.log(`Ocorreu uma erro: ${err}`);
+    }
+}
+
+buscarCep(36207000);
